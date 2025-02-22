@@ -27,4 +27,24 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 ### Step 2: Save this file and assign execution rights.
+```bash
+sudo chmod +x docker.sh
+```
+### Step 3: Execute the script.
+```bash
+./docker.sh
+```
+### Step 4: Add your user in Docker group.(nabeel is user here)
+```bash
+sudo usermod -aG docker nabeel
+```
+### Step 5: Verify.
+```bash
+docker version
+```
+### Output:
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/79907471-6a1a-40c0-a108-90921cf8ef90" alt="Docker Installation" width="500">
+</p>
+
 
