@@ -176,18 +176,35 @@ docker-compose up -d
 
 ## Docker Networking Methodologies
 Docker provides various networking options:
-1. Bridge Network (Default)
+##### 1. Bridge Network (Default)
 * Used for communication between containers on the same host.
 ```bash
 docker network create my-network
 ```
-2. Host Network
+##### 2. Host Network
 * Shares the host network stack; useful for performance but less secure.
 ```bash
 docker run --network host nginx
 ```
-3. Overlay Network
+##### 3. Overlay Network
 * Enables multi-host networking for Swarm.
 ```bash
 docker network create --driver overlay my-network
+```
+## Docker Storage & Volumes
+##### 1. Bind Mounts:
+* Maps a directory from the host to a container.
+```bash
+docker run -v /host/path:/container/path my-container
+```
+##### 2. Docker Volumes:
+* Recommended for persistent data storage.
+```bash
+docker volume create my_volume
+docker run -v my_volume:/data my-container
+```
+##### 3. TMPFS Mounts: 
+* Stores temporary data in RAM.
+```bash
+docker run --tmpfs /tmp my-container
 ```
