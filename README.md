@@ -173,3 +173,21 @@ docker-compose up -d
 ```
 * -d runs the containers in detached mode (background).
 * Docker will pull the Nginx image if it’s not already downloaded and run the service.
+
+## Docker Networking Methodologies
+Docker provides various networking options:
+1. Bridge Network (Default)
+* Used for communication between containers on the same host.
+```bash
+docker network create my-network
+```
+2. Host Network
+* Shares the host network stack; useful for performance but less secure.
+```bash
+docker run --network host nginx
+```
+3. Overlay Network
+* Enables multi-host networking for Swarm.
+```bash
+docker network create --driver overlay my-network
+```
