@@ -132,7 +132,44 @@ docker run -d -p 8087:80 --name my-nginx-container my-nginx-image
 * my-nginx-image is the name of the image you just built.
 ### Sample Docker Compose
 ### Step 1: Install docker-compose
+1. Install Docker Compose from Git Repo:
 ```bash
-sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-
-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 ```
+2. Assign Execution rights:
+```bash
+sudo chmod +x /usr/local/bin/docker-compose
+```
+3. Verify:
+```bash
+docker-compose
+```
+### Step 2: Create a docker-compose.yml File
+1. Create a new directory for your project:
+```bash
+mkdir webserver-compose && cd webserver-compose
+```
+2. Create a docker-compose.yml file:
+```bash
+touch docker-compose.yml
+```
+3. Open the file in a text editor and add your content:
+```bash
+version: '3'
+services:
+  web:
+    image: nginx:latest
+    ports:
+      - "8087:80"
+```
+* version: '3' → Defines the Docker Compose file version.
+* services: → Declares the services to run.
+* web: → Defines a service named web (container).
+* image: nginx:latest → Uses the official Nginx image.
+* ports: → Maps port 80 of the container to 8087 on the host.
+### Step 3: Run Docker Compose
+```bash
+docker-compose up -d
+```
+* -d runs the containers in detached mode (background).
+* Docker will pull the Nginx image if it’s not already downloaded and run the service.
