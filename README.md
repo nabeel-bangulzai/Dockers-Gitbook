@@ -91,7 +91,7 @@ curl localhost:8087
 ### Why Use Dockerfile & Docker Compose?
 * #### Dockerfile is used to automate the creation of Docker images, ensuring consistency across environments. It allows developers to define a customized image with specific dependencies, configurations, and application code.
 * #### Docker Compose is used to define multi-container applications, simplifying service management. It allows defining services, networks, and volumes in a single file, making deployments easier.
-### Sample Dockerfile
+## Sample Dockerfile
 ### Step 1: Create a Dockerfile
 1. Create a new directory for your project:
 ```bash
@@ -130,7 +130,7 @@ docker run -d -p 8087:80 --name my-nginx-container my-nginx-image
 * -p 8087:80 maps port 80 in the container to 8087 on the host.
 * --name my-nginx-container names the container.
 * my-nginx-image is the name of the image you just built.
-### Sample Docker Compose
+## Sample Docker Compose
 ### Step 1: Install docker-compose
 1. Install Docker Compose from Git Repo:
 ```bash
