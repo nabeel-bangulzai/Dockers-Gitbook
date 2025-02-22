@@ -131,4 +131,8 @@ docker run -d -p 8087:80 --name my-nginx-container my-nginx-image
 * --name my-nginx-container names the container.
 * my-nginx-image is the name of the image you just built.
 ### Sample Docker Compose
-
+### Step 1: Install docker-compose
+```bash
+sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-
+compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+```
